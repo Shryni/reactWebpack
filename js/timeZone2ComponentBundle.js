@@ -10921,6 +10921,8 @@ var _reactDom = __webpack_require__(243);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+__webpack_require__(335);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var User = _react2.default.createClass({
@@ -10964,6 +10966,7 @@ var User = _react2.default.createClass({
 		this.setState({ disp: temp2 });
 	},
 
+	// <tr onmouseover="funcDelay= setTimeout('loadData(5)', 1000)" onmouseout="clearTimeout(funcDelay)">
 	onEach: function onEach(dets, i) {
 
 		var loctime = new Date().toLocaleTimeString('en-US', { timeZone: this.state.dateTime[i] });
@@ -10971,26 +10974,34 @@ var User = _react2.default.createClass({
 
 		return _react2.default.createElement(
 			'div',
-			null,
+			{ onMouseOver: this.onHoverIn.bind(this, i), onMouseOut: this.onHoverOut.bind(this, i) },
 			_react2.default.createElement(
-				'span',
-				{ onClick: this.onHoverIn.bind(this, i), onDoubleClick: this.onHoverOut.bind(this, i) },
-				'User:',
-				dets
+				'div',
+				null,
+				_react2.default.createElement(
+					'span',
+					null,
+					'User:',
+					dets
+				)
 			),
 			_react2.default.createElement(
-				'span',
-				{ className: this.state.disp[i] },
-				'COUNTRY: ',
-				this.state.country[i],
-				_react2.default.createElement('br', null),
-				'TIME: ',
-				loctime,
-				_react2.default.createElement('br', null),
-				'DATE:',
-				locDate,
-				_react2.default.createElement('br', null),
-				_react2.default.createElement('br', null)
+				'div',
+				null,
+				_react2.default.createElement(
+					'span',
+					{ className: this.state.disp[i] },
+					'COUNTRY: ',
+					this.state.country[i],
+					_react2.default.createElement('br', null),
+					'TIME: ',
+					loctime,
+					_react2.default.createElement('br', null),
+					'DATE:',
+					locDate,
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('br', null)
+				)
 			)
 		);
 	},
@@ -11004,6 +11015,7 @@ var User = _react2.default.createClass({
 	}
 });
 _reactDom2.default.render(_react2.default.createElement(User, null), document.getElementById('main'));
+_reactDom2.default.render(_react2.default.createElement(Details, null), document.getElementById('more'));
 
 /***/ }),
 /* 136 */
@@ -29793,6 +29805,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var injectTapEventPlugin = __webpack_require__(137);
 injectTapEventPlugin();
+
+/***/ }),
+/* 335 */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: D:\\workspace\\backup\\reactWebpack\\css\\timezone.css Unexpected character '#' (1:0)\nYou may need an appropriate loader to handle this file type.\n| #main {\r\n| \tbackground-color: #e8eff4;\r\n| \tfont-size: 20px;\r");
 
 /***/ })
 /******/ ]);

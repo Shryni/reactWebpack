@@ -1,5 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import '../css/timezone.css';
+
 var User = React.createClass({	
 
 	getInitialState: function(){
@@ -42,8 +44,8 @@ var User = React.createClass({
 		this.setState({disp : temp2});
 
 	},
-	
-	
+
+// <tr onmouseover="funcDelay= setTimeout('loadData(5)', 1000)" onmouseout="clearTimeout(funcDelay)">
 	onEach : function(dets,i)
 	{
 		
@@ -51,10 +53,10 @@ var User = React.createClass({
 			var locDate = new Date().toLocaleDateString('en-US', { timeZone: this.state.dateTime[i] });	
 	 
 		return(
-	       	<div>
+	       	<div onMouseOver={this.onHoverIn.bind(this,i)} onMouseOut={this.onHoverOut.bind(this,i)}>
 	       		
-	       		<span onClick={this.onHoverIn.bind(this,i)} onDoubleClick={this.onHoverOut.bind(this,i)}>User:{dets}</span>
-	       		<span className={this.state.disp[i]} >
+	       		<div><span>User:{dets}</span></div>
+	       		<div><span className={this.state.disp[i]} >
 					COUNTRY: {this.state.country[i]}
 			       	<br />
 			       	TIME: {loctime}
@@ -62,7 +64,7 @@ var User = React.createClass({
 		       		DATE:{locDate}
 	       			<br />
 	       			<br />	
-	    		</span>
+	    		</span></div>
 	       		
 	       		
 	       	</div>
@@ -80,3 +82,4 @@ var User = React.createClass({
 				 }
 });
 ReactDOM.render(<User/>,document.getElementById('main'));
+ReactDOM.render(<Details/>,document.getElementById('more'));

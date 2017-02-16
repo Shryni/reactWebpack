@@ -3,24 +3,24 @@
 	font-size: 20px;
 	border: 1px solid black;
 	
-	width: 100%;
 }
-#div1
-{
-	
-	background-color: yellow;
-}
+
 .show
 {
 	display: block;
 	background-color: #f4fcba;
 	border: 1px solid black;
 	font-size: 15px;
-	display: block;
+
 }
 .dontshow
 {
 	display: none;
+}
+#more
+{
+	background-color: #d4f4c1;
+	border: 1px solid black;
 }
 
 
