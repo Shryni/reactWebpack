@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Display Hover</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	
+	<style>
+	
+	#show{
+    		display: none;
+		}
+    #main:focus + #show {
+   			 display: block;
+
+		}
+	#main{
+		cursor: pointer;
+		}
+	
+
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4" id="main" tabindex="1">
+				<a>On Mouse over</a>
+			</div>
+			
+			<div class="col-lg-4" id="show" >
+				
+					<p >hello</p>
+					<p >Anupama</p>
+				
+			</div>
+				
+
+		</div>
+	</div>		
+	
+	
+		
+	
+</body>
+</html>

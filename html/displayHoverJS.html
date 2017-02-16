@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+ 			 #div4, #div5, #div6 {  
+   						 visibility: hidden;  
+   						 background-color: yellow;
+ 						 }
+	</style>
+</head>
+<body>
+
+	<script>
+  		function show(id) {
+   							 document.getElementById(id).style.visibility = "visible";
+ 						 }
+ 		 function hide(id) {
+    						document.getElementById(id).style.visibility = "hidden";
+ 						 }
+	</script>	
+
+	<div onMouseOver="show('div4')" onMouseOut="hide('div4')">
+ 			Div 1 Content
+	</div>
+	<div onMouseOver="show('div5')" onMouseOut="hide('div5')">
+ 			Div 2 Content
+	</div>
+	<div onMouseOver="show('div6')" onMouseOut="hide('div6')">
+ 			Div 3 Content
+	</div>
+	<div id = "div4">
+		Heyaaaaa Shryni
+	</div>
+	<div id = "div5">
+		Helllllooooo
+	</div>
+	<div id = "div6">
+		Hihihihihihihi
+	</div>
+	
+</body>
+</html>
+
+
+
+
