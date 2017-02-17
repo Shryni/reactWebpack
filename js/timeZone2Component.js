@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../css/timezone.css';
+
 
 var User = React.createClass({	
 
@@ -35,17 +35,33 @@ var User = React.createClass({
 		this.setState({disp : temp2});
 		
 	},
+	
 	onHoverOut: function(index){
+		setTimeout(()=>{ 
 		var temp2 = this.state.disp;
+		if(temp2[index] === "show")
+		{
 		temp2.splice(index,1,'dontshow')
-
-		setInterval(this.update.bind(this,index),1000)
-
 		this.setState({disp : temp2});
+	    }
+		setInterval(this.update.bind(this,index),1000)
+	},1000);
+	},
+
+	changeClass : function(index)
+	{
+		var temp = this.state.disp;
+		temp.splice(index,1,'moreShow')
+		this.setState({disp : temp});
+	},
+	changeBack : function(index)
+	{
+		var temp = this.state.disp;
+		temp.splice(index,1,'dontshow')
+		this.setState({disp : temp});
 
 	},
 
-// <tr onmouseover="funcDelay= setTimeout('loadData(5)', 1000)" onmouseout="clearTimeout(funcDelay)">
 	onEach : function(dets,i)
 	{
 		
@@ -53,10 +69,14 @@ var User = React.createClass({
 			var locDate = new Date().toLocaleDateString('en-US', { timeZone: this.state.dateTime[i] });	
 	 
 		return(
-	       	<div onMouseOver={this.onHoverIn.bind(this,i)} onMouseOut={this.onHoverOut.bind(this,i)}>
-	       		
-	       		<div><span>User:{dets}</span></div>
-	       		<div><span className={this.state.disp[i]} >
+			<div>
+	       	
+	       		<span onMouseOver={this.onHoverIn.bind(this,i)} onMouseOut={this.onHoverOut.bind(this,i) } >User:{dets}</span>
+	       	
+	       	<div className={this.state.disp[i]} onMouseOver={this.changeClass.bind(this,i)} onMouseOut={this.changeBack.bind(this,i)} >
+	       	<span  >
+	       			User : {this.state.name[i]}
+	       			<br/>
 					COUNTRY: {this.state.country[i]}
 			       	<br />
 			       	TIME: {loctime}
@@ -64,10 +84,9 @@ var User = React.createClass({
 		       		DATE:{locDate}
 	       			<br />
 	       			<br />	
-	    		</span></div>
-	       		
-	       		
-	       	</div>
+	    		</span>
+	    		</div>
+	    		</div>
 	   		 );
 	},
 	render: function(){
@@ -82,4 +101,4 @@ var User = React.createClass({
 				 }
 });
 ReactDOM.render(<User/>,document.getElementById('main'));
-ReactDOM.render(<Details/>,document.getElementById('more'));
+

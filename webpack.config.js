@@ -5,7 +5,7 @@ module.exports = {
 	entry : './js/timeZone2ComponentApp.js',
 	output: {
 		path: '.',
-		filename: './js/timeZone2ComponentBundle.js'
+		filename: './js/bundle.js'
 	},
 	watch: true,
 	module: {

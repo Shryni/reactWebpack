@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#show{
+			display: none;
+			 border  : 3px green solid;
+			 position       : absolute;
+   			 top            : 50px;
+   			 left           : 400px;
+  		     width          : 200px;
+  		 	 height         : 200px;
+  		 	 background-color: yellow;
+
+  		 
+		}
+
+		#main:hover + #show { 
+								display:   block;
+								width   : 200px;
+  		 						height  : 200px;
+   								float   : left;
+   								 border  : 3px green solid;
+								
+							 }
+		#show:hover +#show{display : block;}
+
+		#main {
+			width          : 300px;
+  		 	height  : 200px;
+			cursor         : pointer;
+  		 	border         : 3px black solid;
+  			cursor         : pointer;
+  			background-color: red;
+		}
+		</style>
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4" id="main" >
+				<h1 > On top of all MAIN</h1>
+		</div>
+		<div class="col-lg-4" id="show" >
+		<b>This is show</b>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea beatae recusandae, illo iusto facere architecto iste quaerat nemo excepturi autem placeat corrupti ratione quod voluptates earum! Distinctio, vitae nemo consequuntur!		</div>
+	</div>
+	
+</body>
+</html>
